@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Balises de description SEO pour Google -->
+    <title>Société CASH SARL - Congo Assainissement, Santé et Hygiène</title>
+    <meta name="description" content="Société CASH SARL, leader en assainissement, nettoyage industriel, désinfection et gestion des déchets à Kinshasa Gombe, RDC. Des espaces propres, sains et performants.">
+    <meta name="keywords" content="Société CASH SARL, assainissement Kinshasa, nettoyage RDC, désinfection Gombe, gestion des déchets, espaces verts, Simplice Amisi Kinanga">
+    
+    <style>
+        :root {
+            --noir: #0b0b0b;
+            --or: #f4c22b;
+            --bleu: #0056b3;
+            --blanc: #ffffff;
+            --gris: #1a1a1a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--noir); color: var(--blanc); scroll-behavior: smooth; }
+        
+        /* Top Bar & Header */
+        .top-bar { background-color: #000; padding: 10px 5%; display: flex; justify-content: space-between; font-size: 13px; border-bottom: 2px solid var(--or); flex-wrap: wrap; }
+        .top-info span { margin-right: 20px; }
+        header { background-color: var(--gris); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo-text { font-weight: bold; font-size: 24px; color: var(--blanc); }
+        .logo-text span { color: var(--or); }
+        nav a { color: var(--blanc); text-decoration: none; margin-left: 20px; font-weight: 500; }
+        nav a:hover, nav a.active { color: var(--or); }
+
+        /* Hero Section */
+        .hero { display: flex; padding: 50px 5%; align-items: center; min-height: 80vh; background: linear-gradient(135deg, #0b0b0b 50%, #151515 100%); flex-wrap: wrap; }
+        .hero-text { flex: 1; min-width: 300px; padding-right: 30px; }
+        .hero-text h1 { font-size: 42px; margin-bottom: 10px; color: var(--blanc); }
+        .hero-text h1 span { color: var(--or); }
+        .hero-text .subtitle { color: var(--or); font-size: 18px; font-weight: 600; margin-bottom: 20px; letter-spacing: 1px; }
+        .hero-text .slogan { font-size: 32px; font-style: italic; font-weight: bold; margin-bottom: 25px; line-height: 1.2; }
+        .hero-text p { color: #ccc; margin-bottom: 30px; line-height: 1.6; }
+        .cta-buttons .btn { display: inline-block; padding: 12px 28px; font-weight: bold; border-radius: 4px; text-decoration: none; margin-right: 15px; transition: 0.3s; }
+        .btn-or { background-color: var(--or); color: var(--noir); }
+        .btn-or:hover { background-color: #dbad20; }
+        .btn-outline { border: 2px solid var(--blanc); color: var(--blanc); }
+        .btn-outline:hover { background-color: var(--blanc); color: var(--noir); }
+        .hero-image { flex: 1; min-width: 300px; text-align: center; }
+        .hero-image img { max-width: 100%; border-radius: 8px; border-bottom: 5px solid var(--or); }
+
+        /* Features Bar */
+        .features { background-color: var(--gris); padding: 20px 5%; display: flex; justify-content: space-around; border-top: 1px solid #333; border-bottom: 1px solid #333; flex-wrap: wrap; text-align: center; }
+        .feature-item { font-weight: 600; font-size: 14px; padding: 10px; }
+        .feature-item span { color: var(--or); margin-right: 8px; }
+
+        /* Section À Propos */
+        .about-section { padding: 80px 5%; background-color: var(--noir); }
+        .about-container { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 30px; }
+        .about-section h2 { font-size: 32px; text-align: center; position: relative; margin-bottom: 20px; }
+        .about-section h2::after { content: ''; display: block; width: 60px; height: 3px; background-color: var(--or); margin: 10px auto 0; }
+        .about-text p { color: #ccc; font-size: 16px; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+        .about-highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .highlight-box { background-color: var(--gris); padding: 20px; border-radius: 6px; text-align: center; border: 1px solid #222; }
+        .highlight-box h4 { color: var(--or); font-size: 18px; margin-bottom: 8px; }
+        .highlight-box p { color: #aaa; font-size: 13px; line-height: 1.4; }
+
+        /* Services Section */
+        .services-section { padding: 80px 5%; background-color: var(--gris); text-align: center; }
+        .services-section h2 { font-size: 32px; margin-bottom: 40px; position: relative; display: inline-block; }
+        .services-section h2::after { content: ''; display: block; width: 60px; height: 3px; background-color: var(--or); margin: 10px auto 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .service-card { background-color: var(--noir); border-radius: 6px; padding: 30px; border-bottom: 3px solid transparent; transition: 0.3s; text-align: left; border: 1px solid #222; }
+        .service-card:hover { border-bottom-color: var(--or); transform: translateY(-5px); }
+        .service-icon { font-size: 30px; color: var(--or); margin-bottom: 15px; }
+        .service-card h3 { font-size: 18px; margin-bottom: 10px; }
+        .service-card p { color: #aaa; font-size: 14px; line-height: 1.5; }
+
+        /* Devis Section */
+        .devis-section { padding: 80px 5%; background-color: var(--noir); text-align: center; }
+        .devis-section h2 { font-size: 32px; margin-bottom: 20px; }
+        .devis-container { max-width: 600px; margin: 0 auto; text-align: left; background-color: var(--gris); padding: 40px; border-radius: 8px; border: 1px solid #333; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 14px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; background-color: var(--noir); border: 1px solid #444; color: var(--blanc); border-radius: 4px; font-size: 15px; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--or); outline: none; }
+        .btn-submit { width: 100%; padding: 14px; background-color: var(--or); color: var(--noir); border: none; font-weight: bold; font-size: 16px; border-radius: 4px; cursor: pointer; transition: 0.3s; }
+        .btn-submit:hover { background-color: #dbad20; }
+
+        /* Footer */
+        footer { background-color: #000; padding: 30px 5%; text-align: center; color: #666; font-size: 14px; border-top: 1px solid #222; }
+        footer p { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Info Bar -->
+    <div class="top-bar">
+        <div class="top-info">
+            <span>📞 +33 7 65 65 72 80</span>
+            <span>✉️ cash@gmail.com</span>
+            <span>📍 07, Avenue de la Science, Gombe, Kinshasa</span>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="logo-text">SOCIÉTÉ <span>CASH SARL</span></div>
+        <nav>
+            <a href="#" class="active">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="#services">Nos Services</a>
+            <a href="#devis">Demande de devis</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>SOCIÉTÉ <span>CASH SARL</span></h1>
+            <div class="subtitle">CONGO ASSAINISSEMENT, SANTÉ ET HYGIÈNE</div>
+            <div class="slogan">« Des espaces propres,<br>sains et performants. »</div>
+            <p>Votre partenaire institutionnel de confiance pour l'assainissement, le nettoyage industriel, la désinfection, la gestion des déchets et l'entretien des espaces verts en République Démocratique du Congo.</p>
+            <div class="cta-buttons">
+                <a href="#devis" class="btn btn-or">Demander un devis</a>
+                <a href="#about" class="btn btn-outline">En savoir plus</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://unsplash.com" alt="Assainissement Professionnel CASH SARL">
+        </div>
+    </section>
+
+    <!-- Features Reassurance Bar -->
+    <div class="features">
+        <div class="feature-item"><span>✓</span> Professionnalisme</div>
+        <div class="feature-item"><span>✓</span> Qualité</div>
+        <div class="feature-item"><span>✓</span> Équipe qualifiée</div>
+        <div class="feature-item"><span>✓</span> Respect de l'environnement</div>
+        <div class="feature-item"><span>✓</span> Réactivité</div>
+    </div>
+
+    <!-- Section À Propos (Description intégrée) -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2>À propos de la Société CASH SARL</h2>
+            <div class="about-text">
+                <p>La <strong>Société CASH SARL</strong> est une institution de premier plan de droit congolais établie au cœur du centre d'affaires de la commune de la Gombe à Kinshasa. Spécialisée dans l'assainissement industriel, le nettoyage professionnel et la gestion environnementale, notre structure s'impose comme le partenaire stratégique des entreprises, des représentations diplomatiques et des entités publiques en République Démocratique du Congo.</p>
+                <p>Bénéficiant d'un encadrement managérial de haut niveau éprouvé à l'échelle internationale, notamment en Allemagne, la direction générale applique une culture de la précision et une planification rigoureuse qui permettent de piloter des contrats de maintenance complexes avec une efficacité administrative et technique optimale.</p>
