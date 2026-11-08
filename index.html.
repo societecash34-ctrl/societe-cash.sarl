@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOCIÉTÉ CASH - Congo Assainissement, Santé et Hygiène</title>
+    <meta name="description" content="Société CASH, sous la direction de Bijou Pena. Leader en assainissement, nettoyage industriel, désinfection et hygiène en République Démocratique du Congo.">
+    <style>
+        :root {
+            --noir-fond: #000000;
+            --noir-card: #0c0c0c;
+            --or-cash: #e5b800;
+            --bleu-cash: #0056b3;
+            --blanc: #ffffff;
+            --gris-texte: #cccccc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        body { background-color: var(--noir-fond); color: var(--blanc); scroll-behavior: smooth; }
+
+        /* Coordonnées Supérieures */
+        .top-bar { background-color: #000; padding: 12px 5%; display: flex; justify-content: flex-end; align-items: center; gap: 25px; border-bottom: 1px solid #1a1a1a; font-size: 13px; flex-wrap: wrap; }
+        .top-link { color: var(--blanc); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .top-link span { color: var(--or-cash); }
+
+        /* Barre de Navigation */
+        .navbar { background-color: #0c0c0c; padding: 15px 5%; display: flex; align-items: center; justify-content: space-between; border-bottom: 4px solid var(--or-cash); flex-wrap: wrap; gap: 15px; }
+        .nav-brand { font-size: 24px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+        .nav-brand span { color: var(--or-cash); }
+        .nav-menu { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+        .nav-menu a { color: var(--blanc); text-decoration: none; font-size: 14px; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
+        .nav-menu a:hover, .nav-menu a.active { color: var(--or-cash); }
+
+        /* Section Accueil / Héro */
+        .hero-container { display: flex; min-height: 75vh; background: linear-gradient(105deg, #000000 55%, var(--or-cash) 55%, var(--or-cash) 56%, #0d0d0d 56%); flex-wrap: wrap; padding: 40px 5%; align-items: center; gap: 30px; }
+        .hero-content { flex: 1; min-width: 320px; z-index: 2; }
+        .hero-title { font-size: 42px; font-weight: 900; margin-bottom: 5px; text-transform: uppercase; }
+        .hero-subtitle { color: var(--or-cash); font-size: 15px; font-weight: bold; margin-bottom: 25px; letter-spacing: 1px; text-transform: uppercase; }
+        .hero-slogan { font-size: 34px; font-weight: bold; color: var(--or-cash); line-height: 1.2; margin-bottom: 25px; font-style: italic; border-left: 5px solid var(--or-cash); padding-left: 15px; }
+        .hero-description { color: var(--gris-texte); font-size: 15px; line-height: 1.6; margin-bottom: 35px; }
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+        .btn { padding: 14px 28px; font-weight: bold; font-size: 13px; text-transform: uppercase; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s; }
+        .btn-filled { background-color: var(--or-cash); color: #000; }
+        .btn-filled:hover { background-color: #c49d00; }
+        .btn-outlined { border: 2px solid var(--blanc); color: var(--blanc); }
+        .btn-outlined:hover { background-color: var(--blanc); color: #000; }
+        .hero-visual { flex: 1; min-width: 320px; text-align: center; z-index: 2; }
+        .hero-visual img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 15px 35px rgba(0,0,0,0.7); }
+
+        /* Section Direction Générale */
+        .director-section { padding: 60px 5%; background-color: #050505; border-top: 1px solid #111; }
+        .director-container { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .director-image { flex: 1; min-width: 300px; text-align: center; position: relative; }
+        .director-image img { max-width: 100%; max-height: 450px; border-radius: 12px; border-bottom: 6px solid var(--or-cash); }
+        .director-content { flex: 1; min-width: 320px; }
+        .director-badge { background-color: var(--bleu-cash); color: white; padding: 6px 15px; font-size: 12px; font-weight: bold; text-transform: uppercase; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
+        .director-name { font-size: 36px; font-weight: 900; margin-bottom: 5px; color: var(--blanc); }
+        .director-title { color: var(--or-cash); font-size: 18px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .director-pillars { display: flex; flex-direction: column; gap: 15px; margin-bottom: 20px; }
+        .pillar-item { display: flex; gap: 15px; background: var(--noir-card); padding: 15px; border-radius: 6px; border-left: 3px solid var(--or-cash); }
+        .pillar-icon { font-size: 20px; color: var(--or-cash); }
+        .pillar-text h4 { font-size: 15px; margin-bottom: 4px; text-transform: uppercase; }
+        .pillar-text p { color: #aaa; font-size: 13px; line-height: 1.4; }
+
+        /* Section Domaines d'Expertise (Les 8 Services) */
+        .services-section { padding: 60px 5%; background-color: var(--noir-fond); text-align: center; }
+        .services-section h2 { font-size: 32px; font-weight: bold; text-transform: uppercase; margin-bottom: 40px; }
+        .services-section h2::after { content: ''; display: block; width: 80px; height: 3px; background-color: var(--or-cash); margin: 12px auto 0; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+        .service-card { background-color: var(--noir-card); border: 1px solid #1c1c1c; border-radius: 12px; overflow: hidden; transition: 0.3s; text-align: left; display: flex; flex-direction: column; }
+        .service-card:hover { transform: translateY(-5px); border-color: var(--or-cash); }
+        .service-card img { width: 100%; height: 180px; object-fit: cover; border-bottom: 3px solid var(--or-cash); }
+        .service-body { padding: 25px; flex-grow: 1; }
+        .service-card h3 { font-size: 18px; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; color: var(--or-cash); border-bottom: 1px solid #222; padding-bottom: 10px; }
+        .service-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .service-list li { font-size: 14px; color: var(--gris-texte); display: flex; align-items: center; gap: 10px; }
+        .service-list li::before { content: '✔'; color: var(--or-cash); font-weight: bold; font-size: 12px; }
+
+        /* Section Formulaire Devis */
+        .devis-section { padding: 60px 5%; background-color: #0c0c0c; text-align: center; border-top: 1px solid #1a1a1a; }
+        .devis-section h2 { font-size: 28px; margin-bottom: 30px; text-transform: uppercase; }
+        .devis-form { max-width: 600px; margin: 0 auto; text-align: left; background-color: var(--noir-fond); padding: 35px; border-radius: 8px; border: 1px solid #222; }
+        .form-label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: bold; text-transform: uppercase; color: #aaa; }
+        .form-input { width: 100%; padding: 12px; background-color: #0c0c0c; border: 1px solid #333; color: var(--blanc); border-radius: 4px; margin-bottom: 20px; font-size: 14px; }
+        .form-input:focus { border-color: var(--or-cash); outline: none; }
+        .form-btn { width: 100%; padding: 14px; background-color: var(--or-cash); color: #000; border: none; font-weight: bold; font-size: 15px; text-transform: uppercase; border-radius: 4px; cursor: pointer; transition: 0.3s; }
+        .form-btn:hover { background-color: #c49d00; }
+
+        /* Footer */
+        footer { background-color: #000000; padding: 30px 5%; text-align: center; color: #555; font-size: 13px; border-top: 1px solid #111; line-height: 1.6; }
+
+        @media (max-width: 992px) {
+            .hero-container { background: var(--noir-fond); text-align: center; }
+            .hero-slogan { border-left: none; padding-left: 0; }
+            .hero-buttons { justify-content: center; }
+            .navbar { flex-direction: column; gap: 15px; }
+            .director-container { flex-direction: column; text-align: center; }
+            .top-bar { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Coordonnées Supérieures -->
+    <div class="top-bar">
+        <a href="tel:+33765657280" class="top-link"><span>📞</span> +33 7 65 65 72 80</a>
+        <a href="mailto:cash@gmail.com" class="top-link"><span>✉️</span> cash@gmail.com</a>
+        <span class="top-link"><span>📍</span> 07, Av. de la Science, C/Gombe, Kinshasa - RDC</span>
+    </div>
+
+    <!-- Menu de Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">SOCIÉTÉ <span>CASH</span></div>
+        <ul class="nav-menu">
+            <li><a href="#" class="active">Accueil</a></li>
+            <li><a href="#direction">Direction</a></li>
+            <li><a href="#services">Nos Services</a></li>
+            <li><a href="#devis">Demande de devis</a></li>
+        </ul>
+    </nav>
+
+    <!-- Section Héro Principal -->
+    <section class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">SOCIÉTÉ CASH</h1>
+            <div class="hero-subtitle">CONGO ASSAINISSEMENT, SANTÉ ET HYGIÈNE</div>
+            <div class="hero-slogan">« Des espaces propres,<br>sains et performants. »</div>
+            <p class="hero-description">Votre partenaire institutionnel de confiance pour l'assainissement, la salubrité environnementale et la maintenance technique des surfaces sur toute l'étendue de la République Démocratique du Congo.</p>
+            <div class="hero-buttons">
